@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    {% if description %}
+    <meta name="description" content="{{ description }}">
+    {% endif %}
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <img src="{{ site.logo }}" alt="{{ site.title }} Logo" class="hero-logo">
+            <p class="hero-tagline">{{ site.tagline }}</p>
+        </div>
+    </section>
+    
+    <main>
+        <div class="container">
+            {{ content | safe }}
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; {{ site.currentYear }} {{ site.title }}</p>
+        </div>
+    </footer>
+</body>
+</html>

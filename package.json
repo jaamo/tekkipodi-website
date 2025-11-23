@@ -1,0 +1,21 @@
+{
+  "name": "tekkipodi-website",
+  "version": "1.0.0",
+  "description": "Eleventy static site with markdown support",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
+  },
+  "keywords": [
+    "eleventy",
+    "static-site-generator",
+    "markdown"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
+
