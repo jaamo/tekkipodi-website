@@ -37,10 +37,9 @@
     
     <main>
         <div class="container">
-            {{ content | safe }}
             
             <section class="episodes-list">
-                <h2 class="episodes-list-title">Latest Episodes</h2>
+                <h2 class="episodes-list-title">Uusimmat jaksot</h2>
                 <div class="episodes-grid">
                     {% for post in collections.blog %}
                     <article class="episode-card">
@@ -91,6 +90,8 @@
                     {% endfor %}
                 </div>
             </section>
+            {{ content | safe }}
+
         </div>
     </main>
     
