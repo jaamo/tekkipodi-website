@@ -20,10 +20,70 @@ body {
     padding: 0 20px;
 }
 
-header {
-    margin-bottom: 0;
+.site-header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    margin-bottom: 4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 0;
-    background-color: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-spotify-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1db954;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #1db954;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.header-spotify-button:hover {
+    background-color: #1db954;
+    color: #ffffff;
+}
+
+.header-spotify-button svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .header-logo img {
+        height: 32px;
+    }
+    
+    .header-spotify-button {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .header-spotify-button svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 .hero {
@@ -271,7 +331,6 @@ nav a:hover {
 main {
     min-height: 60vh;
     background-color: #1e1e1e;
-    margin-top: -50px;
     position: relative;
     z-index: 2;
 }
@@ -531,9 +590,6 @@ footer {
 }
 
 /* Episodes List Styles */
-.episodes-list {
-}
-
 .episodes-list-title {
     font-size: 2rem;
     color: #ffffff;
@@ -579,7 +635,7 @@ footer {
     box-shadow: 0 4px 12px rgba(78, 201, 176, 0.2);
 }
 
-.episode-card-header {
+.episode-card-body {
     flex: 1;
     min-width: 0;
 }
@@ -630,34 +686,6 @@ footer {
     opacity: 0.7;
 }
 
-.episode-card-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.episode-card-spotify {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #4ec9b0;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    white-space: nowrap;
-    flex-shrink: 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid #4ec9b0;
-    border-radius: 4px;
-}
-
-.episode-card-spotify:hover {
-    color: #6dd4c1;
-    background-color: rgba(78, 201, 176, 0.1);
-    border-color: #6dd4c1;
-}
 
 .episode-card-read-more {
     display: inline-flex;
@@ -679,10 +707,6 @@ footer {
     border-color: #4ec9b0;
 }
 
-.episode-card-spotify svg {
-    width: 18px;
-    height: 18px;
-}
 
 @media (max-width: 768px) {
     .episode-card {
