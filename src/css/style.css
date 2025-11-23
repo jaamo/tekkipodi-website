@@ -225,6 +225,10 @@ body {
 .platform-icon:hover {
     transform: scale(1.1);
     animation: iconElectricGlitch 2s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: #4ec9b0;
+
 }
 
 @keyframes iconElectricGlitch {
@@ -474,7 +478,9 @@ footer {
 
 .footer-platform-icon:hover {
     transform: scale(1.1);
-    animation: iconElectricGlitch 2s ease-in-out;
+    animation: iconElectricGlitch 1s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     color: #4ec9b0;
 }
 
