@@ -7,7 +7,8 @@ module.exports = {
   podcastLinks: {
     spotify: "https://open.spotify.com/show/your-show-id",
     apple: "https://podcasts.apple.com/podcast/your-podcast-id",
-    youtube: "https://music.youtube.com/channel/your-channel-id"
+    youtube: "https://music.youtube.com/channel/your-channel-id",
+    rss: "/feed.xml"
   }
 };
 
