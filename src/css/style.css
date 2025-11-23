@@ -163,7 +163,7 @@ header {
 
 @keyframes iconElectricGlitch {
     0%, 100% {
-        opacity: 0.5;
+        opacity: 1;
     }
     5% {
         opacity: 0.3;
@@ -402,13 +402,13 @@ footer {
     width: 40px;
     height: 40px;
     color: #858585;
-    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
     opacity: 0.5;
 }
 
 .footer-platform-icon:hover {
     transform: scale(1.1);
-    opacity: 1;
+    animation: iconElectricGlitch 2s ease-in-out;
     color: #4ec9b0;
 }
 
