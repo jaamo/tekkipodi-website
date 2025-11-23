@@ -1,8 +1,10 @@
 ---
-layout: layouts/base.njk
+layout: layouts/blog-post.njk
 title: Another Blog Post
 description: Another example blog post
 date: 2024-01-20
+spotify: https://open.spotify.com/episode/example2
+length: 52 min
 ---
 
 # Another Blog Post
