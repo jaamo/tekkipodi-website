@@ -21,9 +21,8 @@ body {
 }
 
 header {
-    border-bottom: 2px solid #3e3e3e;
     margin-bottom: 0;
-    padding: 1rem 0;
+    padding: 0;
     background-color: #1e1e1e;
 }
 
@@ -503,7 +502,6 @@ footer {
 }
 
 .episode-card {
-    background-color: #252526;
     border: 1px solid #3e3e3e;
     border-radius: 8px;
     padding: 1.5rem;
@@ -511,7 +509,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .episode-card-thumbnail {
@@ -522,10 +520,6 @@ footer {
     overflow: hidden;
     display: block;
     transition: transform 0.3s ease;
-}
-
-.episode-card-thumbnail:hover {
-    transform: scale(1.05);
 }
 
 .episode-thumbnail-img {
@@ -543,13 +537,12 @@ footer {
 .episode-card-header {
     flex: 1;
     min-width: 0;
-    padding: 2rem;
 }
 
 .episode-card-title {
     font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-    margin-top: 0;
+    margin-bottom: 0rem;
+    margin-top: -0.4rem;
 }
 
 .episode-card-title a {
@@ -573,7 +566,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .episode-card-date,
@@ -590,6 +583,13 @@ footer {
     width: 16px;
     height: 16px;
     opacity: 0.7;
+}
+
+.episode-card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .episode-card-spotify {
@@ -612,6 +612,26 @@ footer {
     color: #6dd4c1;
     background-color: rgba(78, 201, 176, 0.1);
     border-color: #6dd4c1;
+}
+
+.episode-card-read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #d4d4d4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+}
+
+.episode-card-read-more:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #4ec9b0;
 }
 
 .episode-card-spotify svg {
