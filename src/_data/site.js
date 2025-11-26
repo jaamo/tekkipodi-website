@@ -7,7 +7,7 @@ module.exports = {
   podcastLinks: {
     spotify: "https://open.spotify.com/show/3z7NMSVHpAMvAZgFkk3RNi?si=7cbc9d5144584e40",
     apple: "https://podcasts.apple.com/podcast/your-podcast-idhttps://podcasts.apple.com/us/podcast/tekkipodi/id1854702000",
-    youtube: "https://music.youtube.com/channel/TO-BE-ANNOUNCED",
+    youtube: "https://www.youtube.com/@tekkipodi",
     rss: "https://anchor.fm/s/10bec9170/podcast/rss"
   }
 };
