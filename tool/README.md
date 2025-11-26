@@ -35,7 +35,7 @@ The tool will automatically load variables from the `.env` file if it exists.
 node index.js -m <mp3-file> -n <notes-file> [options]
 ```
 
-Note: Max file size for mp3 file is 25 MB.
+**Note:** The tool automatically splits audio files into 60-second clips before transcription to handle files of any size.
 
 ### Required Arguments
 
@@ -49,8 +49,30 @@ Note: Max file size for mp3 file is 25 MB.
 - `-l, --length <length>` - Episode length (e.g., "25 min")
 - `-t, --title <title>` - Episode title (if not provided, will be auto-generated)
 - `-d, --date <date>` - Episode date in YYYY-MM-DD format (default: today)
+- `--debug <mode>` - Debug mode: run only selected part (`split`, `transcribe`, or `write`)
 - `-h, --help` - Display help
 - `-V, --version` - Display version
+
+### Debug Mode
+
+The `--debug` parameter allows you to run only specific parts of the process:
+
+- `--debug split` - Only split audio into 60-second clips (no transcription or blog writing)
+- `--debug transcribe` - Only transcribe existing clips (will use existing clips if available, or split if needed)
+- `--debug write` - Only write blog post (requires existing transcription file)
+
+**Examples:**
+
+```bash
+# Only split audio
+node index.js -m audio.mp3 -n notes.txt --debug split
+
+# Only transcribe (assumes clips exist)
+node index.js -m audio.mp3 -n notes.txt --debug transcribe
+
+# Only write blog (assumes transcription exists)
+node index.js -m audio.mp3 -n notes.txt --debug write
+```
 
 ### Example
 
@@ -89,8 +111,32 @@ The tool generates an 11ty markdown file with:
 
 - Node.js 18+ (ES modules support)
 - OpenAI API key
+- ffmpeg and ffprobe (for audio splitting)
 - MP3 audio file
 - Notes file (text format)
+
+### Installing ffmpeg
+
+**macOS:**
+```bash
+brew install ffmpeg
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install ffmpeg
+```
+
+**Fedora:**
+```bash
+sudo dnf install ffmpeg
+```
+
+**Windows:**
+Download from [ffmpeg.org](https://ffmpeg.org/download.html) or use chocolatey:
+```bash
+choco install ffmpeg
+```
 
 ## Audio manipulation
 
