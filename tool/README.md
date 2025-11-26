@@ -11,13 +11,23 @@ npm install
 
 ## Setup
 
-Set your OpenAI API key as an environment variable:
+Set your OpenAI API key. You can do this in two ways:
+
+**Option 1: Using a `.env` file (recommended)**
+
+Create a `.env` file in the `tool` directory:
+
+```bash
+OPENAI_API_KEY=your-api-key-here
+```
+
+**Option 2: Using environment variable**
 
 ```bash
 export OPENAI_API_KEY=your-api-key-here
 ```
 
-Or add it to your `.env` file (you'll need to use a package like `dotenv` if you want to load from `.env`).
+The tool will automatically load variables from the `.env` file if it exists.
 
 ## Usage
 
@@ -82,3 +92,7 @@ The tool generates an 11ty markdown file with:
 - MP3 audio file
 - Notes file (text format)
 
+## Audio manipulation
+
+ffmpeg -i input_file.wav -codec:a libmp3lame -b:a 320k output_file.mp3  
+ffmpeg -i jakso001.wav -codec:a libmp3lame -b:a 128k -t 60 jakso001-cut.mp3  

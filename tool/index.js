@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import 'dotenv/config';
 import { program } from 'commander';
 import fs from 'fs/promises';
 import { createReadStream } from 'fs';
@@ -288,18 +289,24 @@ Respond in JSON format:
       messages: [
         {
           role: 'system',
-          content: 'You are a metadata generator for podcast blog posts. Respond only with valid JSON.'
+          content: 'You are a metadata generator for podcast blog posts. Respond only with valid JSON, no additional text or markdown formatting.'
         },
         {
           role: 'user',
           content: prompt
         }
       ],
-      temperature: 0.7,
-      response_format: { type: 'json_object' }
+      temperature: 0.7
     });
     
-    const metadata = JSON.parse(completion.choices[0].message.content);
+    let content = completion.choices[0].message.content.trim();
+    
+    // Remove markdown code blocks if present
+    if (content.startsWith('```')) {
+      content = content.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    }
+    
+    const metadata = JSON.parse(content);
     return metadata;
   } catch (error) {
     console.error('❌ Error generating metadata:', error.message);
