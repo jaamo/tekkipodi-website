@@ -743,15 +743,44 @@ footer {
 
 /* Quote Section Styles */
 .quote-section {
+    position: relative;
     width: 100%;
     margin: 4rem 0;
-    padding: 6rem 0;
+    padding: 12rem 0;
     text-align: center;
     background-color: #ffffff;
     color: #1e1e1e;
+    overflow: hidden;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #1e1e1e;
+    transform: skewY(0.5deg);
+    transform-origin: top left;
+    z-index: 0;
+}
+
+.quote-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #1e1e1e;
+    transform: skewY(-1deg);
+    transform-origin: bottom left;
+    z-index: 0;
 }
 
 .quote-text {
+    position: relative;
     font-size: 3rem;
     font-style: italic;
     color: #1e1e1e;
@@ -763,6 +792,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
+    z-index: 1;
 }
 
 .quote-text::before,
