@@ -320,7 +320,7 @@ async function summarizeToBlogPost(transcription, notesContent) {
   const links = extractLinks(notesContent);
   const linksText = links.length > 0 ? `\n\nSources:\n${links.map((link, i) => `${i + 1}. ${link}`).join('\n')}` : '';
   
-  const prompt = `You are a podcast blog post writer. Create a well-structured blog post summary in Finnish based on the following podcast transcription.
+  const prompt = `You are a podcast episode summary writer. Create a well-structured podcast episode summary in Finnish based on the following podcast transcription.
 
 Transcription:
 ${transcription}
@@ -329,12 +329,11 @@ ${notesContent ? `Additional notes:\n${notesContent}` : ''}
 
 Requirements:
 - Do no include introduction or conclusion in the blog post. Only main topics.
-- Write in Finnish
-- Create a descriptive blog post that summarizes the key points
+- Write in Finnish.
+- Describe briefly podcast episode main topics and key points.
 - Use clear headings and paragraphs. Add only top level subheadings. No sub-subheadings.
-- Make it informative
-- Keep the tone professional
-${links.length > 0 ? '- Include the sources at the end as a "Lähteet" (Sources) section. Make sure to add only one sources section.' : ''}
+- Make it informative.
+- Keep the tone professional.
 
 Generate only the blog post content (markdown format), without frontmatter.`;
 
@@ -344,7 +343,7 @@ Generate only the blog post content (markdown format), without frontmatter.`;
       messages: [
         {
           role: 'system',
-          content: 'You are a professional blog post writer specializing in technology podcast summaries. Write in Finnish.'
+          content: 'You are a professional writer specializing in technology podcast summaries. Write in Finnish.'
         },
         {
           role: 'user',

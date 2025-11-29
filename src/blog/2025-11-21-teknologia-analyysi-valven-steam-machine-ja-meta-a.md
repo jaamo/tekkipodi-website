@@ -2,7 +2,7 @@
 layout: "layouts/blog-post.njk"
 title: "001 - Valven Steam Machine, Meta-alustan huijarit ja maailmamallit"
 description: "Podcastissa käsitellään Valven uutta Steam Machine pelikonsolia, Metan toimintaa huijareiden suhteen sekä kielimallien ja maailmamallien tulevaisuutta."
-date: "2025-11-29"
+date: "2025-11-21"
 spotify: https://open.spotify.com/episode/2O3s0aHcEY4XjJzxzEAT8W?si=4113c75de5c94c5b
 length: 25 min
 ---
