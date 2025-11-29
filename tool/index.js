@@ -328,12 +328,13 @@ ${transcription}
 ${notesContent ? `Additional notes:\n${notesContent}` : ''}
 
 Requirements:
+- Do no include introduction or conclusion in the blog post. Only main topics.
 - Write in Finnish
-- Create a compelling blog post that summarizes the key points
-- Use clear headings and paragraphs
-- Make it engaging and informative
-- Keep the tone conversational but professional
-${links.length > 0 ? '- Include the sources at the end as a "Lähteet" (Sources) section' : ''}
+- Create a descriptive blog post that summarizes the key points
+- Use clear headings and paragraphs. Add only top level subheadings. No sub-subheadings.
+- Make it informative
+- Keep the tone professional
+${links.length > 0 ? '- Include the sources at the end as a "Lähteet" (Sources) section. Make sure to add only one sources section.' : ''}
 
 Generate only the blog post content (markdown format), without frontmatter.`;
 
@@ -408,7 +409,7 @@ async function generateMetadata(transcription) {
   console.log('📋 Generating title and description...');
   
   const prompt = `Based on this podcast transcription, generate:
-1. A short, catchy title in Finnish (max 80 characters)
+1. A short descriptive title in Finnish (max 80 characters). Title should describe briefly main topics.
 2. A brief description in Finnish (max 200 characters)
 
 Transcription:
