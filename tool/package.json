@@ -1,0 +1,26 @@
+{
+  "name": "tekkipodi-tool",
+  "version": "1.0.0",
+  "description": "CLI tool to convert MP3 podcast episodes to 11ty markdown blog posts",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "tekkipodi-tool": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "podcast",
+    "transcription",
+    "blog",
+    "11ty"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "dotenv": "^17.2.3",
+    "openai": "^4.20.0"
+  }
+}
