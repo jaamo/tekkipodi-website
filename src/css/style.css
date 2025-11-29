@@ -741,3 +741,45 @@ footer {
     }
 }
 
+/* Quote Section Styles */
+.quote-section {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 6rem 0;
+    text-align: center;
+    background-color: #ffffff;
+    color: #1e1e1e;
+}
+
+.quote-text {
+    font-size: 3rem;
+    font-style: italic;
+    color: #1e1e1e;
+    margin: 2rem auto;
+    padding: 0;
+    border: none;
+    quotes: none;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.quote-text::before,
+.quote-text::after {
+    content: '';
+}
+
+@media (max-width: 768px) {
+    .quote-section {
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+    
+    .quote-text {
+        font-size: 2.5rem;
+        margin: 1.5rem auto;
+        padding: 0 20px;
+    }
+}
+

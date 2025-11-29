@@ -84,8 +84,31 @@
                     {% endfor %}
                 </div>
             </section>
-            {{ content | safe }}
 
+        </div>
+        
+        <section class="quote-section">
+            <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta."]'>
+                <!-- Quote will be inserted by JavaScript -->
+            </blockquote>
+            <script>
+                (function() {
+                    const quoteElement = document.getElementById('random-quote');
+                    if (quoteElement) {
+                        try {
+                            const quotes = JSON.parse(quoteElement.getAttribute('data-quotes'));
+                            const randomIndex = Math.floor(Math.random() * quotes.length);
+                            quoteElement.textContent = '"' + quotes[randomIndex] + '"';
+                        } catch (e) {
+                            console.error('Error parsing quotes:', e);
+                        }
+                    }
+                })();
+            </script>
+        </section>
+        
+        <div class="container">
+            {{ content | safe }}
         </div>
     </main>
     
