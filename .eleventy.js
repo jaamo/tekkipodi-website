@@ -21,6 +21,8 @@ module.exports = function(eleventyConfig) {
       return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
     } else if (format === "MMM d, yyyy") {
       return `${shortMonths[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+    } else if (format === "iso") {
+      return d.toISOString();
     }
     return d.toLocaleDateString();
   });
