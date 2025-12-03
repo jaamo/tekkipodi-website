@@ -1,7 +1,7 @@
 module.exports = {
   title: "Tekkipodi",
   tagline: "Podcast, jossa analysoidaan kiinnostavia uutisia teknologian, internetin, tekoälyn ja startupien tiimoilta.",
-  logo: "/images/tekkipodi-logo.png",
+  logo: "/images/tekkipodi-logo.svg",
   heroBackground: "/images/hero.jpg",
   currentYear: new Date().getFullYear(),
   podcastLinks: {
