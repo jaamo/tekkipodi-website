@@ -15,6 +15,9 @@ const execAsync = promisify(exec);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Data directory for input files and temporary outputs
+const DATA_DIR = path.join(__dirname, 'data');
+
 // Initialize OpenAI client with extended timeout for large file uploads
 // Default timeout is 10 minutes (600000ms), but we'll set it higher for large audio files
 const openai = new OpenAI({
@@ -75,9 +78,8 @@ async function splitAudioIntoClips(audioPath, clipDuration = 60) {
   console.log(`   Creating ${numClips} clip(s) of ${clipDuration} seconds each`);
   
   const baseName = path.basename(audioPath, path.extname(audioPath));
-  // Create audio-parts folder in the same directory as the input file
-  const audioDir = path.dirname(audioPath);
-  const clipsDir = path.join(audioDir, 'audio-parts');
+  // Create audio-parts folder in the data directory
+  const clipsDir = path.join(DATA_DIR, 'audio-parts');
   await fs.mkdir(clipsDir, { recursive: true });
   
   console.log(`   Saving clips to: ${clipsDir}`);
@@ -185,12 +187,11 @@ async function transcribeAudio(mp3Path, skipSplitting = false) {
     
     if (skipSplitting) {
       // Use existing clips
-      clipPaths = await getExistingClips(mp3Path);
+      clipPaths = await getExistingClips();
       if (clipPaths.length === 0) {
         throw new Error('No existing clips found. Run with split mode first or remove skipSplitting flag.');
       }
-      const audioDir = path.dirname(mp3Path);
-      clipsDir = path.join(audioDir, 'audio-parts');
+      clipsDir = path.join(DATA_DIR, 'audio-parts');
       console.log(`   Using existing ${clipPaths.length} clip(s) from: ${clipsDir}`);
     } else {
       // Check if ffmpeg is installed
@@ -205,9 +206,8 @@ async function transcribeAudio(mp3Path, skipSplitting = false) {
       clipsDir = splitResult.clipsDir;
     }
     
-    // Create transcriptions folder
-    const audioDir = path.dirname(mp3Path);
-    const transcriptionsDir = path.join(audioDir, 'transcriptions');
+    // Create transcriptions folder in data directory
+    const transcriptionsDir = path.join(DATA_DIR, 'transcriptions');
     await fs.mkdir(transcriptionsDir, { recursive: true });
     console.log(`   📁 Transcriptions folder: ${transcriptionsDir}`);
     
@@ -458,9 +458,8 @@ Respond in JSON format:
 /**
  * Check if audio clips already exist
  */
-async function checkClipsExist(audioPath) {
-  const audioDir = path.dirname(audioPath);
-  const clipsDir = path.join(audioDir, 'audio-parts');
+async function checkClipsExist() {
+  const clipsDir = path.join(DATA_DIR, 'audio-parts');
   try {
     const files = await fs.readdir(clipsDir);
     return files.filter(f => f.endsWith('.mp3')).length > 0;
@@ -472,9 +471,8 @@ async function checkClipsExist(audioPath) {
 /**
  * Get existing clip paths
  */
-async function getExistingClips(audioPath) {
-  const audioDir = path.dirname(audioPath);
-  const clipsDir = path.join(audioDir, 'audio-parts');
+async function getExistingClips() {
+  const clipsDir = path.join(DATA_DIR, 'audio-parts');
   try {
     const files = await fs.readdir(clipsDir);
     const clipFiles = files
@@ -493,17 +491,20 @@ async function getExistingClips(audioPath) {
 /**
  * Read existing full transcription
  */
-async function readExistingTranscription(audioPath) {
-  const audioDir = path.dirname(audioPath);
-  const transcriptionsDir = path.join(audioDir, 'transcriptions');
-  const baseName = path.basename(audioPath, path.extname(audioPath));
-  const transcriptionPath = path.join(transcriptionsDir, `${baseName}-full.txt`);
-  
+async function readExistingTranscription() {
+  const transcriptionsDir = path.join(DATA_DIR, 'transcriptions');
+  // Look for any -full.txt file in transcriptions directory
   try {
+    const files = await fs.readdir(transcriptionsDir);
+    const fullTranscriptionFile = files.find(f => f.endsWith('-full.txt'));
+    if (!fullTranscriptionFile) {
+      throw new Error('No full transcription file found');
+    }
+    const transcriptionPath = path.join(transcriptionsDir, fullTranscriptionFile);
     const transcription = await fs.readFile(transcriptionPath, 'utf-8');
     return transcription;
   } catch (error) {
-    throw new Error(`Transcription file not found: ${transcriptionPath}. Run transcription first.`);
+    throw new Error(`Transcription file not found in ${transcriptionsDir}. Run transcription first.`);
   }
 }
 
@@ -515,8 +516,6 @@ async function main() {
     .name('tekkipodi-tool')
     .description('Convert MP3 podcast episodes to 11ty markdown blog posts')
     .version('1.0.0')
-    .requiredOption('-m, --mp3 <path>', 'Path to MP3 audio file')
-    .requiredOption('-n, --notes <path>', 'Path to notes file')
     .option('-o, --output <path>', 'Output markdown file path (default: blog/[timestamp]-episode.md)')
     .option('-s, --spotify <url>', 'Spotify episode URL')
     .option('-l, --length <length>', 'Episode length (e.g., "25 min")')
@@ -542,10 +541,13 @@ async function main() {
   }
 
   try {
-    // Read files
+    // Use hardcoded paths
+    const mp3Path = path.join(DATA_DIR, 'input.wav');
+    const notesPath = path.join(DATA_DIR, 'notes.txt');
+    
     console.log('📂 Reading input files...');
-    const mp3Path = path.resolve(options.mp3);
-    const notesPath = path.resolve(options.notes);
+    console.log(`   Audio: ${mp3Path}`);
+    console.log(`   Notes: ${notesPath}`);
     
     // Check if files exist
     try {
@@ -554,7 +556,7 @@ async function main() {
         await fs.access(notesPath);
       }
     } catch (error) {
-      console.error(`❌ Error: File not found - ${error.path}`);
+      console.error(`❌ Error: File not found - ${error.path || mp3Path}`);
       process.exit(1);
     }
 
@@ -573,7 +575,7 @@ async function main() {
     // Debug mode: transcribe
     if (debugMode === 'transcribe') {
       console.log('🔧 Debug mode: transcribe only');
-      const clipsExist = await checkClipsExist(mp3Path);
+      const clipsExist = await checkClipsExist();
       await transcribeAudio(mp3Path, clipsExist);
       console.log('✅ Transcription completed');
       return;
@@ -583,7 +585,7 @@ async function main() {
     if (debugMode === 'write') {
       console.log('🔧 Debug mode: write only');
       const notesContent = await fs.readFile(notesPath, 'utf-8');
-      const transcription = await readExistingTranscription(mp3Path);
+      const transcription = await readExistingTranscription();
       console.log(`✅ Loaded existing transcription (${transcription.length} characters)`);
       
       // Generate metadata if not provided
