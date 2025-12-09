@@ -5,6 +5,7 @@ node_modules/
 *.wav
 *.m4a
 *.txt
-output/
+data/*
+!data/.gitkeep
 .DS_Store
 
