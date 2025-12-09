@@ -3,6 +3,9 @@ layout: "layouts/blog-post.njk"
 title: "003 - Jollan paluu, datakeskukset avaruudessa, brainrot IDE ja Googlen uusi käyttöjärjestelmä"
 description: "Podcastissa analysoidaan teknologiauutisia, kuten Jollan uutta puhelinta, avaruusdatakeskuksia ja Googlen uutta käyttöjärjestelmää. Mukana myös keskustelua startuppeista ja tekoälystä."
 date: "2025-12-09"
+spotify: https://open.spotify.com/episode/0B4OIfv85Lxr3J3AeC3Xwa?si=d2510f38cd5c4272
+length: 26 min
+
 ---
 
 # Jolla Phone
