@@ -320,22 +320,27 @@ async function summarizeToBlogPost(transcription, notesContent) {
   const links = extractLinks(notesContent);
   const linksText = links.length > 0 ? `\n\nSources:\n${links.map((link, i) => `${i + 1}. ${link}`).join('\n')}` : '';
   
-  const prompt = `You are a podcast episode summary writer. Create a well-structured podcast episode summary in Finnish based on the following podcast transcription.
+  const prompt = `Olet podcastin puhtaaksikirjoittaja, joka kirjoittaa podcastin blogikirjoitukseksi. Tehtäväsi on tiivistää podcastin sisältö puhtaaksi tekstiksi. Kirjoita sisältö suomeksi. 
 
-Transcription:
+Podcastin sisältö koostuu aloituksesta, vaihtuvista aiheista ja lopetuksesta. Älä sisällytä aloitusta ja lopetusta blogikirjoitukseen.
+
+Kirjoita teksti kuten normaali blogikirjoitus aiheesta. Älä siis käytä ilmauksia kuten "podcastitta puhutaan siitä, miten konesalit avaruudessa ovat ongelma". Kirjoita sen sijaan suoraan: "konesalit avaruudessa ovat ongelma."
+
+Otsikoi kun aihealueet selkeästi. 
+
+Podcastin sisältö:
 ${transcription}
 
-${notesContent ? `Additional notes:\n${notesContent}` : ''}
+${notesContent ? `Lisämuistiinpanot: \n${notesContent}` : ''}
 
-Requirements:
-- Do no include introduction or conclusion in the blog post. Only main topics.
+Vaatimukset:
+- Älä sisällytä johdantoa ja lopetusta
 - Write in Finnish.
-- Describe briefly podcast episode main topics and key points.
-- Use clear headings and paragraphs. Add only top level subheadings. No sub-subheadings.
-- Make it informative.
-- Keep the tone professional.
+- Kuvaa podcastin sisältö otsikoituna aihealueittain.
+- Käytä vain päätason otsikoita. Ei alaotsikoita. 
+- Pidä sävy virallisena. Ei leikkisää tekstiä.
 
-Generate only the blog post content (markdown format), without frontmatter.`;
+Vastaa vain blogin sisällöllä, ei muuta tekstiä. Älä käytä markdown-merkintöjä.`;
 
   try {
     const completion = await openai.chat.completions.create({
@@ -407,14 +412,17 @@ function generateFrontmatter(title, description, date, spotify, length) {
 async function generateMetadata(transcription) {
   console.log('📋 Generating title and description...');
   
-  const prompt = `Based on this podcast transcription, generate:
-1. A short descriptive title in Finnish (max 80 characters). Title should describe briefly main topics.
-2. A brief description in Finnish (max 200 characters)
+  const prompt = `Kirjoita otsikko ja kuvaus podcastin sisällön perusteella.
 
-Transcription:
+1. Otsikon tulee kuvata podcastin pääteemat lyhyesti. Älä mainitse otsikossa podcastin nimeä tai podcastin yleiskuvausta teknologiasta, tekoälystä ja startupeista. Otsikon tulee listata jakson pääteemat, kukin yhdellä tai kahdella sanalla. Käytä isoissa kirjaimissa Suomalaista tapaa, eli aloita lause isolla kirjaimella, ei joka sanaa.
+2. Kirjoita kuvaus podcastin sisällön perusteella. Kuvauksessa ei saa mainita podcastin nimeä tai podcastin yleiskuvausta teknologiasta, tekoälystä ja startupeista. Kuvauksen tulee kattaa muutamalla lauseeella podcastin pääteemat. Alun intro ja lopetus eivät kuulu kuvaukseen.
+
+Älä mainitse otsikossa kuvauksessa podcastin nimeä tai podcastin yleiskuvausta teknologiasta, tekoälystä ja startupeista. 
+
+Podcastin sisältö:
 ${transcription.substring(0, 2000)}...
 
-Respond in JSON format:
+Vastaa JSON-muodossa:
 {
   "title": "title here",
   "description": "description here"
