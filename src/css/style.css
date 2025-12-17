@@ -489,6 +489,17 @@ footer {
     height: 100%;
 }
 
+.footer-platform-icon img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1) opacity(0.85);
+    transition: filter 0.3s ease;
+}
+
+.footer-platform-icon:hover img {
+    filter: brightness(0) invert(1) opacity(1);
+}
+
 @media (max-width: 768px) {
     .footer-platforms {
         gap: 1rem;
