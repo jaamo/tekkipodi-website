@@ -26,7 +26,7 @@
 </head>
 <body>
     
-    <section class="hero">
+    <section class="hero" id="hero-section">
         <div class="hero-content">
             <img src="{{ site.logo }}" alt="{{ site.title }} Logo" class="hero-logo">
             <p class="hero-tagline">{{ site.tagline }}</p>
@@ -155,5 +155,42 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        (function() {
+            const hero = document.getElementById('hero-section');
+            if (!hero) return;
+            
+            let ticking = false;
+            
+            function updateParallax() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const heroHeight = hero.offsetHeight;
+                const heroTop = hero.offsetTop;
+                
+                // Only apply parallax when hero is in viewport
+                if (scrollTop < heroTop + heroHeight) {
+                    // Parallax speed factor (0.5 means background scrolls at 50% speed)
+                    const parallaxSpeed = 0.5;
+                    const yPos = scrollTop * parallaxSpeed;
+                    
+                    hero.style.backgroundPosition = `right ${yPos}px`;
+                }
+                
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick, { passive: true });
+            // Initialize on load
+            updateParallax();
+        })();
+    </script>
 </body>
 </html>
