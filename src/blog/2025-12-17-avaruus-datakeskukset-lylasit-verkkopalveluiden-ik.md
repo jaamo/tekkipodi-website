@@ -1,6 +1,6 @@
 ---
 layout: "layouts/blog-post.njk"
-title: "Älylasit, Verkkopalveluiden ikärajat ja ökyrikkaiden rahankäyttö"
+title: "004 - Älylasit, Verkkopalveluiden ikärajat ja ökyrikkaiden rahankäyttö"
 description: "Tässä jaksossa keskustelemme jälleen datakeskuksista avaruudessa ja niihin liittyvistä haasteista. Pohdimme myös älylasien tulevaisuutta ja brittien asettamia ikärajoja verkkopalveluille. Lopuksi tarkastelemme Epic Gamesin toimitusjohtajan metsäostoja."
 date: "2025-12-17"
 spotify: https://open.spotify.com/episode/0f626obPNv1GtPt7ZQqlkd?si=6765ee49ccc94827
