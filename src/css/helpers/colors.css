@@ -1,0 +1,28 @@
+/* Color Utility Classes */
+
+/* Font Colors */
+.color-font-black {
+  color: #1e1e1e;
+}
+
+.color-font-white {
+  color: #ffffff;
+}
+
+/* Background Colors */
+.color-bg-black {
+  background-color: #1e1e1e;
+}
+
+.color-bg-white {
+  background-color: #ffffff;
+}
+
+/* Line/Border Colors */
+.color-line-black {
+  border-color: #1e1e1e;
+}
+
+.color-line-white {
+  border-color: #ffffff;
+}

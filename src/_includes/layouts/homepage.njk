@@ -48,11 +48,11 @@
     </section>
 
     <main>
-        <div class="slice">
+        <div class="slice slice--black">
             <div class="container">
+                <h2>Uusimmat jaksot</h2>
 
                 <section class="episodes-list">
-                    <h2 class="episodes-list-title">Uusimmat jaksot</h2>
                     <div class="episodes-grid">
                         {% for post in collections.blog %}
                         <article class="episode-card">
@@ -97,11 +97,13 @@
 
         </div>
 
-        <section class="guestbook-section">
-            <h2 class="guestbook-title">Vieraskirja</h2>
-            <div id="guestbook-widget"></div>
-            <script src="{{ env.guestbookWidgetUrl }}"></script>
-        </section>
+        <div class="slice slice--white">
+            <div class="container">
+                <h2 class="color-font-black">Vieraskirja</h2>
+                <div id="guestbook-widget"></div>
+                <script src="{{ env.guestbookWidgetUrl }}"></script>
+            </div>
+        </div>
 
         <section class="quote-section">
             <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
