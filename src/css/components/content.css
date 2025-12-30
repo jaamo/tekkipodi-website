@@ -1,0 +1,93 @@
+/* Content Component - Styles markdown content */
+
+.content {
+  /* Default: white background, black text */
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: var(--color-black);
+}
+
+.content p {
+  color: var(--color-black);
+}
+
+.content a {
+  color: var(--color-black);
+}
+
+.content code {
+  color: var(--color-black);
+}
+
+.content pre {
+  color: var(--color-black);
+}
+
+.content blockquote {
+  color: var(--color-black);
+}
+
+.content table th,
+.content table td {
+  color: var(--color-black);
+}
+
+.content ul,
+.content ol {
+  color: var(--color-black);
+}
+
+.content li {
+  color: var(--color-black);
+}
+
+/* Modifier: white background variant (for dark backgrounds) */
+.content--white h1,
+.content--white h2,
+.content--white h3,
+.content--white h4,
+.content--white h5,
+.content--white h6 {
+  color: var(--color-white);
+}
+
+.content--white p {
+  color: var(--color-white);
+}
+
+.content--white a {
+  color: var(--color-white);
+}
+
+.content--white code {
+  color: var(--color-white);
+}
+
+.content--white pre {
+  color: var(--color-white);
+}
+
+.content--white blockquote {
+  color: var(--color-white);
+}
+
+.content--white table th,
+.content--white table td {
+  color: var(--color-white);
+}
+
+.content--white ul,
+.content--white ol {
+  color: var(--color-white);
+}
+
+.content--white li {
+  color: var(--color-white);
+}
+

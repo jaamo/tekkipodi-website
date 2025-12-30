@@ -128,15 +128,17 @@
         </div>
 
         <div class="slice slice--white">
-            <div class="container pt-l pb-l">
-                {{ content | safe }}
+            <div class="container pt-xl pb-xl">
+                <div class="content">
+                    {{ content | safe }}
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="slice slice--black slice--top-decoration">
-            <div class="container pt-l pb-l">
+            <div class="container pt-m pb-l">
                 <div class="platforms">
                     <a href="{{ site.podcastLinks.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-icon platform-icon--white" aria-label="Listen on Spotify">
                         <img src="/images/logo-spotify.svg" alt="Spotify">

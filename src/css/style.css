@@ -12,7 +12,6 @@
 @import url("./components/slice.css");
 @import url("./components/container.css");
 @import url("./components/hero.css");
-@import url("./components/footer.css");
 @import url("./components/header.css");
 @import url("./components/platforms.css");
 @import url("./components/episode-list.css");
@@ -21,6 +20,7 @@
 @import url("./components/button.css");
 @import url("./components/guestbook-section.css");
 @import url("./components/quote-section.css");
+@import url("./components/content.css");
 
 /* Helpers */
 @import url("./helpers/animations.css");
