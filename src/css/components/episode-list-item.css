@@ -83,25 +83,6 @@
     opacity: 0.7;
 }
 
-.episode-card-read-more {
-    display: inline-flex;
-    align-items: center;
-    color: #d4d4d4;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    white-space: nowrap;
-    padding: 0.5rem 1rem;
-    border: 1px solid #3e3e3e;
-    border-radius: 4px;
-}
-
-.episode-card-read-more:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: #4ec9b0;
-}
 
 @media (max-width: 768px) {
     .episode-card {

@@ -84,9 +84,9 @@
                                 {% if post.data.description %}
                                 <p class="episode-card-description">{{ post.data.description }}</p>
                                 {% endif %}
-                                <a href="{{ post.url }}" class="episode-card-read-more">
-                                    Lue lisää
-                                </a>
+                            <a href="{{ post.url }}" class="button">
+                                Lue lisää
+                            </a>
                             </div>
                         </article>
                         {% endfor %}
@@ -98,9 +98,9 @@
         </div>
 
         <div class="slice slice--white">
-            <div class="container pt-l pb-l">
-                <h2 class="color-font-black">Vieraskirja</h2>
-                Soon...
+            <div class="container pt-xl pb-l">
+                <div id="guestbook-widget"></div>
+                <script src="{{ env.guestbookWidgetUrl }}"></script>
             </div>
         </div>
 

@@ -1,45 +1,56 @@
 /* Button Component */
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    border: 1px solid #3e3e3e;
-    border-radius: 4px;
-    background-color: transparent;
-    color: #d4d4d4;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    cursor: pointer;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4d4d4;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border: 1px solid #3e3e3e;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .button:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: #4ec9b0;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #4ec9b0;
 }
 
 .button--primary {
-    background-color: #4ec9b0;
-    border-color: #4ec9b0;
-    color: #ffffff;
+  background-color: #4ec9b0;
+  border-color: #4ec9b0;
+  color: #ffffff;
 }
 
 .button--primary:hover {
-    background-color: #6dd4c1;
-    border-color: #6dd4c1;
+  background-color: #6dd4c1;
+  border-color: #6dd4c1;
 }
 
 .button--spotify {
-    color: #1db954;
-    border-color: #1db954;
+  color: #1db954;
+  border-color: #1db954;
 }
 
 .button--spotify:hover {
-    background-color: #1db954;
-    color: #ffffff;
+  background-color: #1db954;
+  color: #ffffff;
+}
+
+.button--black {
+  color: var(--color-black);
+  border-color: #d0d0d0;
+}
+
+.button--black:hover {
+  color: #ffffff;
+  background-color: var(--color-black);
+  border-color: var(--color-black);
 }
 
