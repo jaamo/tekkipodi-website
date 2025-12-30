@@ -1,0 +1,23 @@
+/* Episode List Component */
+.episodes-list {
+    margin: 2rem 0;
+}
+
+.episodes-list-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.episodes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .episodes-list-title {
+        font-size: 1.75rem;
+    }
+}
+

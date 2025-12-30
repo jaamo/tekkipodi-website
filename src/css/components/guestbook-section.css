@@ -1,0 +1,28 @@
+/* Guestbook Section Component */
+.guestbook-section {
+    margin: 4rem 0;
+    padding: 2rem 0;
+    background-color: #ffffff;
+}
+
+.guestbook-title {
+    font-size: 2rem;
+    color: #1e1e1e;
+    margin-bottom: 2rem;
+}
+
+#guestbook-widget {
+    min-height: 200px;
+}
+
+@media (max-width: 768px) {
+    .guestbook-section {
+        margin: 3rem 0;
+        padding: 1.5rem 0;
+    }
+    
+    .guestbook-title {
+        font-size: 1.75rem;
+    }
+}
+

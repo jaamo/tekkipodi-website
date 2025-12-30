@@ -1,0 +1,118 @@
+/* Animations Helper */
+@keyframes electricGlitch {
+    0%, 100% {
+        opacity: 1;
+    }
+    2% {
+        opacity: 0.45;
+    }
+    2.1% {
+        opacity: 1;
+    }
+    2.2% {
+        opacity: 0.9;
+    }
+    2.3% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    45.5% {
+        opacity: 0.28;
+    }
+    45.6% {
+        opacity: 1;
+    }
+    45.7% {
+        opacity: 0.22;
+    }
+    45.8% {
+        opacity: 1;
+    }
+    78% {
+        opacity: 1;
+    }
+    78.2% {
+        opacity: 0.46;
+    }
+    78.3% {
+        opacity: 1;
+    }
+    78.4% {
+        opacity: 0.39;
+    }
+    78.5% {
+        opacity: 1;
+    }
+    78.6% {
+        opacity: 0.41;
+    }
+    78.7% {
+        opacity: 1;
+    }
+}
+
+@keyframes iconElectricGlitch {
+    0%, 100% {
+        opacity: 1;
+    }
+    5% {
+        opacity: 0.3;
+    }
+    5.5% {
+        opacity: 1;
+    }
+    6% {
+        opacity: 0.4;
+    }
+    6.5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    25.5% {
+        opacity: 0.25;
+    }
+    26% {
+        opacity: 1;
+    }
+    26.5% {
+        opacity: 0.35;
+    }
+    27% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    50.3% {
+        opacity: 0.3;
+    }
+    50.6% {
+        opacity: 1;
+    }
+    50.9% {
+        opacity: 0.4;
+    }
+    51.2% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    75.4% {
+        opacity: 0.28;
+    }
+    75.8% {
+        opacity: 1;
+    }
+    76.2% {
+        opacity: 0.38;
+    }
+    76.6% {
+        opacity: 0.5;
+    }
+}
+

@@ -1,0 +1,103 @@
+/* Episode Detail Component (for blog post pages) */
+.episode {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.episode-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #3e3e3e;
+}
+
+.episode-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.episode-description {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.episode-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.episode-spotify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4ec9b0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.episode-spotify-link:hover {
+    color: #6dd4c1;
+}
+
+.episode-spotify-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.episode-length,
+.episode-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #858585;
+    font-size: 0.95rem;
+}
+
+.episode-length svg,
+.episode-date svg {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.episode-content {
+    line-height: 1.8;
+    color: #d4d4d4;
+}
+
+.episode-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+.episode-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #d4d4d4;
+}
+
+@media (max-width: 768px) {
+    .episode-title {
+        font-size: 2rem;
+    }
+    
+    .episode-description {
+        font-size: 1.1rem;
+    }
+    
+    .episode-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+

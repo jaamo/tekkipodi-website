@@ -1,0 +1,16 @@
+/* Section Component */
+.section {
+    padding: 2rem 0;
+    background-color: #1e1e1e;
+}
+
+.section--white {
+    background-color: #ffffff;
+    color: #1e1e1e;
+}
+
+.section--dark {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+

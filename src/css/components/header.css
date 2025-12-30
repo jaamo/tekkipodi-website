@@ -1,0 +1,88 @@
+/* Header Component */
+.site-header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    margin-bottom: 4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-spotify-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1db954;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #1db954;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.header-spotify-button:hover {
+    background-color: #1db954;
+    color: #ffffff;
+}
+
+.header-spotify-button svg {
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #d4d4d4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4ec9b0;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 20px;
+    }
+    
+    .header-logo img {
+        height: 32px;
+    }
+    
+    .header-spotify-button {
+        display: none;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .header-spotify-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
