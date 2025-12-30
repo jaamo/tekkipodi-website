@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/css");
@@ -5,6 +7,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/blog/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/blog/**/*.png");
+  
+  // Add global data for environment variables
+  eleventyConfig.addGlobalData("env", {
+    guestbookWidgetUrl: process.env.GUESTBOOK_WIDGET_URL || "https://guestbook.tekkipodi.fi/widget.js"
+  });
 
   // Add date filter
   eleventyConfig.addFilter("dateFormat", function(date, format) {
