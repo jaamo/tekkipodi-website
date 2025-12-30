@@ -48,7 +48,7 @@
     </section>
 
     <main>
-        <div class="slice slice--black">
+        <div class="slice slice--black slice--bottom-decoration slice--top-decoration">
             <div class="container">
                 <h2>Uusimmat jaksot</h2>
 
@@ -98,35 +98,39 @@
         </div>
 
         <div class="slice slice--white">
-            <div class="container">
+            <div class="container pt-l pb-l">
                 <h2 class="color-font-black">Vieraskirja</h2>
                 <div id="guestbook-widget"></div>
                 <script src="{{ env.guestbookWidgetUrl }}"></script>
             </div>
         </div>
 
-        <section class="quote-section">
-            <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
-                <!-- Quote will be inserted by JavaScript -->
-            </blockquote>
-            <script>
-                (function() {
-                    const quoteElement = document.getElementById('random-quote');
-                    if (quoteElement) {
-                        try {
-                            const quotes = JSON.parse(quoteElement.getAttribute('data-quotes'));
-                            const randomIndex = Math.floor(Math.random() * quotes.length);
-                            quoteElement.textContent = '"' + quotes[randomIndex] + '"';
-                        } catch (e) {
-                            console.error('Error parsing quotes:', e);
+        <div class="slice slice--black slice--bottom-decoration slice--top-decoration">
+            <div class="container">
+                <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
+                    <!-- Quote will be inserted by JavaScript -->
+                </blockquote>
+                <script>
+                    (function() {
+                        const quoteElement = document.getElementById('random-quote');
+                        if (quoteElement) {
+                            try {
+                                const quotes = JSON.parse(quoteElement.getAttribute('data-quotes'));
+                                const randomIndex = Math.floor(Math.random() * quotes.length);
+                                quoteElement.textContent = '"' + quotes[randomIndex] + '"';
+                            } catch (e) {
+                                console.error('Error parsing quotes:', e);
+                            }
                         }
-                    }
-                })();
-            </script>
-        </section>
+                    })();
+                </script>
+            </div>
+        </div>
 
-        <div class="container">
-            {{ content | safe }}
+        <div class="slice slice--white">
+            <div class="container pt-l pb-l">
+                {{ content | safe }}
+            </div>
         </div>
     </main>
 

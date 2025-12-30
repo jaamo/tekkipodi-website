@@ -16,9 +16,6 @@ body {
 }
 
 main {
-  min-height: 60vh;
-  position: relative;
-  z-index: 2;
 }
 
 main a {

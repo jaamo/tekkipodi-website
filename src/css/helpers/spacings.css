@@ -1,0 +1,143 @@
+/* Spacing Utility Classes */
+
+/* Spacing Scale */
+/* n = none (0) */
+/* s = small (1rem) */
+/* m = medium (2rem) */
+/* l = large (4rem) */
+
+/* Margin Top */
+.mt-n {
+  margin-top: 0;
+}
+
+.mt-s {
+  margin-top: 1rem;
+}
+
+.mt-m {
+  margin-top: 2rem;
+}
+
+.mt-l {
+  margin-top: 4rem;
+}
+
+/* Margin Right */
+.mr-n {
+  margin-right: 0;
+}
+
+.mr-s {
+  margin-right: 1rem;
+}
+
+.mr-m {
+  margin-right: 2rem;
+}
+
+.mr-l {
+  margin-right: 4rem;
+}
+
+/* Margin Bottom */
+.mb-n {
+  margin-bottom: 0;
+}
+
+.mb-s {
+  margin-bottom: 1rem;
+}
+
+.mb-m {
+  margin-bottom: 2rem;
+}
+
+.mb-l {
+  margin-bottom: 4rem;
+}
+
+/* Margin Left */
+.ml-n {
+  margin-left: 0;
+}
+
+.ml-s {
+  margin-left: 1rem;
+}
+
+.ml-m {
+  margin-left: 2rem;
+}
+
+.ml-l {
+  margin-left: 4rem;
+}
+
+/* Padding Top */
+.pt-n {
+  padding-top: 0;
+}
+
+.pt-s {
+  padding-top: 1rem;
+}
+
+.pt-m {
+  padding-top: 2rem;
+}
+
+.pt-l {
+  padding-top: 4rem;
+}
+
+/* Padding Right */
+.pr-n {
+  padding-right: 0;
+}
+
+.pr-s {
+  padding-right: 1rem;
+}
+
+.pr-m {
+  padding-right: 2rem;
+}
+
+.pr-l {
+  padding-right: 4rem;
+}
+
+/* Padding Bottom */
+.pb-n {
+  padding-bottom: 0;
+}
+
+.pb-s {
+  padding-bottom: 1rem;
+}
+
+.pb-m {
+  padding-bottom: 2rem;
+}
+
+.pb-l {
+  padding-bottom: 4rem;
+}
+
+/* Padding Left */
+.pl-n {
+  padding-left: 0;
+}
+
+.pl-s {
+  padding-left: 1rem;
+}
+
+.pl-m {
+  padding-left: 2rem;
+}
+
+.pl-l {
+  padding-left: 4rem;
+}

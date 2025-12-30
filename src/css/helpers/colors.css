@@ -1,28 +1,34 @@
 /* Color Utility Classes */
 
+/* CSS Variables */
+:root {
+  --color-black: #1e1e1e;
+  --color-white: #ffffff;
+}
+
 /* Font Colors */
 .color-font-black {
-  color: #1e1e1e;
+  color: var(--color-black);
 }
 
 .color-font-white {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 /* Background Colors */
 .color-bg-black {
-  background-color: #1e1e1e;
+  background-color: var(--color-black);
 }
 
 .color-bg-white {
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 /* Line/Border Colors */
 .color-line-black {
-  border-color: #1e1e1e;
+  border-color: var(--color-black);
 }
 
 .color-line-white {
-  border-color: #ffffff;
+  border-color: var(--color-white);
 }
