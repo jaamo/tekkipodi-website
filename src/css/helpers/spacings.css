@@ -5,6 +5,7 @@
 /* s = small (1rem) */
 /* m = medium (2rem) */
 /* l = large (4rem) */
+/* xl = extra large (6rem) */
 
 /* Margin Top */
 .mt-n {
@@ -21,6 +22,10 @@
 
 .mt-l {
   margin-top: 4rem;
+}
+
+.mt-xl {
+  margin-top: 6rem;
 }
 
 /* Margin Right */
@@ -40,6 +45,10 @@
   margin-right: 4rem;
 }
 
+.mr-xl {
+  margin-right: 6rem;
+}
+
 /* Margin Bottom */
 .mb-n {
   margin-bottom: 0;
@@ -55,6 +64,10 @@
 
 .mb-l {
   margin-bottom: 4rem;
+}
+
+.mb-xl {
+  margin-bottom: 6rem;
 }
 
 /* Margin Left */
@@ -74,6 +87,10 @@
   margin-left: 4rem;
 }
 
+.ml-xl {
+  margin-left: 6rem;
+}
+
 /* Padding Top */
 .pt-n {
   padding-top: 0;
@@ -89,6 +106,10 @@
 
 .pt-l {
   padding-top: 4rem;
+}
+
+.pt-xl {
+  padding-top: 6rem;
 }
 
 /* Padding Right */
@@ -108,6 +129,10 @@
   padding-right: 4rem;
 }
 
+.pr-xl {
+  padding-right: 6rem;
+}
+
 /* Padding Bottom */
 .pb-n {
   padding-bottom: 0;
@@ -125,6 +150,10 @@
   padding-bottom: 4rem;
 }
 
+.pb-xl {
+  padding-bottom: 6rem;
+}
+
 /* Padding Left */
 .pl-n {
   padding-left: 0;
@@ -140,4 +169,8 @@
 
 .pl-l {
   padding-left: 4rem;
+}
+
+.pl-xl {
+  padding-left: 6rem;
 }
