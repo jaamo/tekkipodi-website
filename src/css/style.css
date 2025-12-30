@@ -1,25 +1,26 @@
 /* Main CSS File - Imports all components and helpers */
 
 /* Base */
-@import url('./base/reset.css');
+@import url("./base/reset.css");
 
 /* Components */
-@import url('./components/heading-1.css');
-@import url('./components/heading-2.css');
-@import url('./components/heading-3.css');
-@import url('./components/paragraph.css');
-@import url('./components/section.css');
-@import url('./components/container.css');
-@import url('./components/hero.css');
-@import url('./components/footer.css');
-@import url('./components/header.css');
-@import url('./components/episode-list.css');
-@import url('./components/episode-list-item.css');
-@import url('./components/episode-detail.css');
-@import url('./components/button.css');
-@import url('./components/guestbook-section.css');
-@import url('./components/quote-section.css');
+@import url("./components/heading-1.css");
+@import url("./components/heading-2.css");
+@import url("./components/heading-3.css");
+@import url("./components/paragraph.css");
+@import url("./components/section.css");
+@import url("./components/slice.css");
+@import url("./components/container.css");
+@import url("./components/hero.css");
+@import url("./components/footer.css");
+@import url("./components/header.css");
+@import url("./components/episode-list.css");
+@import url("./components/episode-list-item.css");
+@import url("./components/episode-detail.css");
+@import url("./components/button.css");
+@import url("./components/guestbook-section.css");
+@import url("./components/quote-section.css");
 
 /* Helpers */
-@import url('./helpers/animations.css');
-@import url('./helpers/typography.css');
+@import url("./helpers/animations.css");
+@import url("./helpers/typography.css");

@@ -9,23 +9,23 @@
     {% endif %}
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/favicon.png">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.title }}">
     <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.tagline }}{% endif %}">
     <meta property="og:image" content="/images/cover.jpg">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ site.title }}">
     <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.tagline }}{% endif %}">
     <meta name="twitter:image" content="/images/cover.jpg">
-    
+
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+
     <section class="hero" id="hero-section">
         <div class="hero-content">
             <img src="{{ site.logo }}" alt="{{ site.title }} Logo" class="hero-logo">
@@ -46,60 +46,62 @@
             </div>
         </div>
     </section>
-    
+
     <main>
-        <div class="container">
-            
-            <section class="episodes-list">
-                <h2 class="episodes-list-title">Uusimmat jaksot</h2>
-                <div class="episodes-grid">
-                    {% for post in collections.blog %}
-                    <article class="episode-card">
-                        <a href="{{ post.url }}" class="episode-card-thumbnail">
-                            <img src="/images/cover.jpg" alt="{{ post.data.title }}" class="episode-thumbnail-img">
-                        </a>
-                        <div class="episode-card-body">
-                            <h3 class="episode-card-title">
-                                <a href="{{ post.url }}">{{ post.data.title }}</a>
-                            </h3>
-                            <div class="episode-card-meta">
-                                {% if post.data.date %}
-                                <span class="episode-card-date">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                                    </svg>
-                                    {{ post.data.date | dateFormat("MMM d, yyyy") }}
-                                </span>
-                                {% endif %}
-                                {% if post.data.length %}
-                                <span class="episode-card-length">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                                    </svg>
-                                    {{ post.data.length }}
-                                </span>
-                                {% endif %}
-                            </div>
-                            {% if post.data.description %}
-                            <p class="episode-card-description">{{ post.data.description }}</p>
-                            {% endif %}
-                            <a href="{{ post.url }}" class="episode-card-read-more">
-                                Lue lisää
+        <div class="slice">
+            <div class="container">
+
+                <section class="episodes-list">
+                    <h2 class="episodes-list-title">Uusimmat jaksot</h2>
+                    <div class="episodes-grid">
+                        {% for post in collections.blog %}
+                        <article class="episode-card">
+                            <a href="{{ post.url }}" class="episode-card-thumbnail">
+                                <img src="/images/cover.jpg" alt="{{ post.data.title }}" class="episode-thumbnail-img">
                             </a>
-                        </div>
-                    </article>
-                    {% endfor %}
-                </div>
-            </section>
-            
+                            <div class="episode-card-body">
+                                <h3 class="episode-card-title">
+                                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                                </h3>
+                                <div class="episode-card-meta">
+                                    {% if post.data.date %}
+                                    <span class="episode-card-date">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                        </svg>
+                                        {{ post.data.date | dateFormat("MMM d, yyyy") }}
+                                    </span>
+                                    {% endif %}
+                                    {% if post.data.length %}
+                                    <span class="episode-card-length">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                        </svg>
+                                        {{ post.data.length }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                                {% if post.data.description %}
+                                <p class="episode-card-description">{{ post.data.description }}</p>
+                                {% endif %}
+                                <a href="{{ post.url }}" class="episode-card-read-more">
+                                    Lue lisää
+                                </a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+
+            </div>
 
         </div>
-        
+
         <section class="guestbook-section">
             <h2 class="guestbook-title">Vieraskirja</h2>
             <div id="guestbook-widget"></div>
             <script src="{{ env.guestbookWidgetUrl }}"></script>
-        </section>        
+        </section>
 
         <section class="quote-section">
             <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
@@ -120,12 +122,12 @@
                 })();
             </script>
         </section>
-        
+
         <div class="container">
             {{ content | safe }}
         </div>
     </main>
-    
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -146,38 +148,38 @@
             </div>
         </div>
     </footer>
-    
+
     <script>
         (function() {
             const hero = document.getElementById('hero-section');
             if (!hero) return;
-            
+
             let ticking = false;
-            
+
             function updateParallax() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const heroHeight = hero.offsetHeight;
                 const heroTop = hero.offsetTop;
-                
+
                 // Only apply parallax when hero is in viewport
                 if (scrollTop < heroTop + heroHeight) {
                     // Parallax speed factor (0.5 means background scrolls at 50% speed)
                     const parallaxSpeed = 0.5;
                     const yPos = scrollTop * parallaxSpeed;
-                    
+
                     hero.style.backgroundPosition = `right ${yPos}px`;
                 }
-                
+
                 ticking = false;
             }
-            
+
             function requestTick() {
                 if (!ticking) {
                     window.requestAnimationFrame(updateParallax);
                     ticking = true;
                 }
             }
-            
+
             window.addEventListener('scroll', requestTick, { passive: true });
             // Initialize on load
             updateParallax();

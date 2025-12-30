@@ -15,7 +15,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "prettier": "^3.7.4"
   },
   "dependencies": {
     "dotenv": "^17.2.3"
