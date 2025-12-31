@@ -1,97 +1,97 @@
 /* Episode List Item Component */
 .episode-card {
-    border: 1px solid #3e3e3e;
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    align-items: flex-start;
+  border: 1px solid #3e3e3e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .episode-card:hover {
-    border-color: #4ec9b0;
-    box-shadow: 0 4px 12px rgba(78, 201, 176, 0.2);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(78, 201, 176, 0.2);
 }
 
 .episode-card-thumbnail {
-    flex-shrink: 0;
-    width: 120px;
-    height: 120px;
-    border-radius: 4px;
-    overflow: hidden;
-    display: block;
-    transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
 .episode-thumbnail-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .episode-card-body {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .episode-card-title {
-    font-size: 1.3rem;
-    margin-bottom: 0rem;
-    margin-top: -0.4rem;
+  font-size: 1.3rem;
+  margin-bottom: 0rem;
+  margin-top: -0.4rem;
 }
 
 .episode-card-title a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .episode-card-title a:hover {
-    color: #4ec9b0;
+  color: var(--color-accent);
 }
 
 .episode-card-description {
-    color: #b0b0b0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
 }
 
 .episode-card-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .episode-card-date,
 .episode-card-length {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #858585;
-    font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #858585;
+  font-size: 0.85rem;
 }
 
 .episode-card-date svg,
 .episode-card-length svg {
-    width: 16px;
-    height: 16px;
-    opacity: 0.7;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
 }
-
 
 @media (max-width: 768px) {
-    .episode-card {
-        flex-direction: row;
-        gap: 1rem;
-    }
-    
-    .episode-card-thumbnail {
-        display: none;
-    }
-}
+  .episode-card {
+    flex-direction: row;
+    gap: 1rem;
+  }
 
+  .episode-card-thumbnail {
+    display: none;
+  }
+}
