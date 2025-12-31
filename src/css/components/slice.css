@@ -46,3 +46,20 @@
   transform-origin: bottom left;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .slice--top-decoration {
+    padding-top: 30px;
+  }
+
+  .slice--bottom-decoration {
+    padding-bottom: 30px;
+  }
+
+  .slice--top-decoration::before {
+    height: 50px;
+  }
+  .slice--bottom-decoration::after {
+    height: 50px;
+  }
+}
