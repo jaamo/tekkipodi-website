@@ -1,6 +1,6 @@
 ---
 layout: "layouts/blog-post.njk"
-title: "Donut Labsin uusi akku, Rust-ohjelmointikieli, Tailwind ja fuusiovoima"
+title: "006 - Donut Labsin uusi akku, Rust-ohjelmointikieli, Tailwind ja fuusiovoima"
 description: "Podcastissa käsitellään Donut Labsin uuden akkuteknologian esittelyä ja sen mahdollisia vaikutuksia teknologia-alalla. Pohditaan myös Rust-ohjelmointikielen suosiota ja Tailwindin alamäkeä. Lopuksi keskustellaan fuusiovoiman potentiaalista."
 date: "2026-01-12"
 spotify: "https://open.spotify.com/episode/4oODM1oTTFwERVGd9lRBqe?si=ec66dcc7496c4002"
