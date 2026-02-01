@@ -5,6 +5,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
+
+  // Copy cookie consent library files
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/vanilla-cookieconsent/dist/cookieconsent.css": "vendor/cookieconsent.css",
+    "node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js": "vendor/cookieconsent.umd.js"
+  });
   eleventyConfig.addPassthroughCopy("src/blog/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/blog/**/*.png");
 
