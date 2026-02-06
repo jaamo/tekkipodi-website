@@ -25,6 +25,25 @@
     <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.tagline }}{% endif %}">
     <meta name="twitter:image" content="/images/cover.jpg">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastEpisode",
+      "name": "{{ title }}",
+      "description": "{{ description }}",
+      "url": "https://www.tekkipodi.fi{{ page.url }}",
+      "datePublished": "{{ date | dateFormat('iso') }}"{% if length %},
+      "duration": "{{ length | isoDuration }}"{% endif %},
+      "image": "https://www.tekkipodi.fi/images/cover.jpg",
+      "inLanguage": "fi",
+      "partOfSeries": {
+        "@type": "PodcastSeries",
+        "name": "{{ site.title }}",
+        "url": "https://www.tekkipodi.fi/"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
 

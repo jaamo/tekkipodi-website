@@ -66,6 +66,18 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleDateString();
   });
 
+  // Convert human-readable duration to ISO 8601 (e.g. "26 min" -> "PT26M", "1h 23min" -> "PT1H23M")
+  eleventyConfig.addFilter("isoDuration", function (length) {
+    if (!length) return "";
+    const str = String(length).toLowerCase().trim();
+    const hourMatch = str.match(/(\d+)\s*h/);
+    const minMatch = str.match(/(\d+)\s*min/);
+    const hours = hourMatch ? parseInt(hourMatch[1], 10) : 0;
+    const minutes = minMatch ? parseInt(minMatch[1], 10) : 0;
+    if (hours === 0 && minutes === 0) return "";
+    return "PT" + (hours ? hours + "H" : "") + (minutes ? minutes + "M" : "");
+  });
+
   // Add collection for blog posts
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
