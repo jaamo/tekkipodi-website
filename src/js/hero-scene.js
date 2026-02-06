@@ -132,7 +132,9 @@ if (canvas) {
     ? boxConfigs.filter((_, i) => i % 2 === 0)
     : boxConfigs;
 
-  const sizeScale = isMobile ? 0.5 : 1;
+  const sizeScale = isMobile ? 0.65 : 1;
+  const posScaleX = isMobile ? 0.35 : 1;
+  const posScaleY = isMobile ? 0.7 : 1;
 
   const boxes = activeConfigs.map((cfg) => {
     const geometry = new RoundedBoxGeometry(
@@ -148,7 +150,7 @@ if (canvas) {
       metalness: 0.0,
     });
     const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(cfg.pos[0], cfg.pos[1], cfg.pos[2]);
+    mesh.position.set(cfg.pos[0] * posScaleX, cfg.pos[1] * posScaleY, cfg.pos[2]);
     mesh.rotation.set(
       Math.random() * Math.PI * 2,
       Math.random() * Math.PI * 2,
