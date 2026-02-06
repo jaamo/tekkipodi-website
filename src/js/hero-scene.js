@@ -27,12 +27,22 @@ if (canvas) {
 
   // Box configurations
   const boxConfigs = [
-    { size: [2.0, 2.0, 2.0], pos: [-4.5, 1.5, -2], color: 0xf0f0f0, speed: [0.003, 0.005, 0.002] },
-    { size: [1.4, 1.4, 1.4], pos: [3.5, -1.0, -1], color: 0xe8e8e8, speed: [0.005, 0.003, 0.004] },
-    { size: [1.8, 1.8, 1.8], pos: [0.5, 2.0, -3], color: 0xf5f5f5, speed: [0.004, 0.006, 0.003] },
-    { size: [1.2, 1.2, 1.2], pos: [-2.5, -1.8, 0], color: 0xececec, speed: [0.006, 0.004, 0.005] },
-    { size: [1.6, 1.6, 1.6], pos: [5.0, 0.5, -2], color: 0xe5e5e5, speed: [0.003, 0.007, 0.002] },
-    { size: [1.0, 1.0, 1.0], pos: [-1.0, -2.5, -1], color: 0xf2f2f2, speed: [0.007, 0.005, 0.006] },
+    // Edge boxes — half off screen, extra large
+    { size: [6.0, 6.0, 6.0], pos: [-15.0, 4.5, -5], color: 0xf0f0f0, speed: [0.001, 0.0015, 0.0008] },
+    { size: [5.5, 5.5, 5.5], pos: [15.5, -4.0, -4], color: 0xe8e8e8, speed: [0.0015, 0.001, 0.0012] },
+    { size: [5.8, 5.8, 5.8], pos: [13.0, 5.5, -6], color: 0xe5e5e5, speed: [0.001, 0.002, 0.0007] },
+    { size: [5.5, 5.5, 5.5], pos: [-14.0, -5.5, -5], color: 0xededed, speed: [0.0012, 0.001, 0.0015] },
+    // Outer boxes — large
+    { size: [3.5, 3.5, 3.5], pos: [-10.0, -3.0, -3], color: 0xececec, speed: [0.0018, 0.0012, 0.0015] },
+    { size: [3.2, 3.2, 3.2], pos: [10.5, 2.5, -3], color: 0xf5f5f5, speed: [0.0012, 0.0018, 0.001] },
+    { size: [3.0, 3.0, 3.0], pos: [-11.0, 7.0, -4], color: 0xeaeaea, speed: [0.0015, 0.0012, 0.001] },
+    { size: [3.3, 3.3, 3.3], pos: [11.5, -6.5, -4], color: 0xefefef, speed: [0.001, 0.0015, 0.0018] },
+    // Mid boxes — medium
+    { size: [2.0, 2.0, 2.0], pos: [-6.0, 2.0, -2], color: 0xf2f2f2, speed: [0.0015, 0.001, 0.0012] },
+    { size: [1.8, 1.8, 1.8], pos: [7.0, -2.0, -2], color: 0xebebeb, speed: [0.0012, 0.0018, 0.001] },
+    // Near center — small
+    { size: [1.2, 1.2, 1.2], pos: [-2.5, -2.0, -1], color: 0xf3f3f3, speed: [0.002, 0.0015, 0.0018] },
+    { size: [1.0, 1.0, 1.0], pos: [3.0, 1.5, -1], color: 0xf0f0f0, speed: [0.0018, 0.002, 0.0012] },
   ];
 
   const boxes = boxConfigs.map((cfg) => {
