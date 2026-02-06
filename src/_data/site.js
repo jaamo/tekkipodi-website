@@ -1,4 +1,5 @@
 module.exports = {
+  url: "https://www.tekkipodi.fi",
   title: "Tekkipodi",
   tagline: "Podcast, jossa analysoidaan kiinnostavia uutisia teknologian, internetin, tekoälyn ja startupien tiimoilta.",
   logo: "/images/tekkipodi-logo.svg",

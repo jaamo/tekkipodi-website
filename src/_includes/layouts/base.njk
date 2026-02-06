@@ -7,9 +7,10 @@
     {% if description %}
     <meta name="description" content="{{ description }}">
     {% endif %}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/favicon.png">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.title }}">
