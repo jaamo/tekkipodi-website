@@ -82,6 +82,7 @@
     {% include "partials/nav.njk" %}
 
     <section class="hero" id="hero-section">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <img src="{{ site.logo }}" alt="{{ site.title }} Logo" class="hero-logo">
             <h1 class="visually-hidden">{{ site.title }}</h1>
@@ -204,42 +205,15 @@
         </div>
     </footer>
 
-    <script>
-        (function() {
-            const hero = document.getElementById('hero-section');
-            if (!hero) return;
-
-            let ticking = false;
-
-            function updateParallax() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const heroHeight = hero.offsetHeight;
-                const heroTop = hero.offsetTop;
-
-                // Only apply parallax when hero is in viewport
-                if (scrollTop < heroTop + heroHeight) {
-                    // Parallax speed factor (0.5 means background scrolls at 50% speed)
-                    const parallaxSpeed = 0.5;
-                    const yPos = scrollTop * parallaxSpeed;
-
-                    hero.style.backgroundPosition = `right ${yPos}px`;
-                }
-
-                ticking = false;
-            }
-
-            function requestTick() {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateParallax);
-                    ticking = true;
-                }
-            }
-
-            window.addEventListener('scroll', requestTick, { passive: true });
-            // Initialize on load
-            updateParallax();
-        })();
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
     </script>
+    <script type="module" src="/js/hero-scene.js"></script>
 
     <script src="/vendor/cookieconsent.umd.js"></script>
     <script src="/js/cookieconsent-config.js"></script>
