@@ -11,9 +11,9 @@
             </button>
             <ul class="nav-list">
                 <li><a href="/" class="nav-link{% if page.url == '/' %} nav-link--active{% endif %}">Etusivu</a></li>
-                <li><a href="/#jaksot" class="nav-link">Jaksot</a></li>
-                <li><a href="/#vieraskirja" class="nav-link">Vieraskirja</a></li>
-                <li><a href="/#aanessa" class="nav-link">Äänessä</a></li>
+                <li><a href="/jaksot/" class="nav-link{% if page.url == '/jaksot/' %} nav-link--active{% endif %}">Jaksot</a></li>
+                <li><a href="/vieraskirja/" class="nav-link{% if page.url == '/vieraskirja/' %} nav-link--active{% endif %}">Vieraskirja</a></li>
+                <li><a href="/aanessa/" class="nav-link{% if page.url == '/aanessa/' %} nav-link--active{% endif %}">Äänessä</a></li>
             </ul>
         </nav>
         <a href="{{ site.podcastLinks.spotify }}" target="_blank" rel="noopener noreferrer" class="header-spotify-button">
