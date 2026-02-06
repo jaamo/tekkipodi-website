@@ -127,39 +127,52 @@ if (canvas) {
     },
   ];
 
-  const isMobile = window.innerWidth <= 768;
-  const activeConfigs = isMobile
-    ? boxConfigs.filter((_, i) => i % 2 === 0)
-    : boxConfigs;
+  let boxes = [];
 
-  const sizeScale = isMobile ? 0.65 : 1;
-  const posScaleX = isMobile ? 0.35 : 1;
-  const posScaleY = isMobile ? 0.7 : 1;
+  function buildBoxes() {
+    // Remove old boxes
+    for (const box of boxes) {
+      scene.remove(box);
+      box.geometry.dispose();
+      box.material.dispose();
+    }
 
-  const boxes = activeConfigs.map((cfg) => {
-    const geometry = new RoundedBoxGeometry(
-      cfg.size[0] * sizeScale,
-      cfg.size[1] * sizeScale,
-      cfg.size[2] * sizeScale,
-      4,
-      0.15
-    );
-    const material = new THREE.MeshStandardMaterial({
-      color: cfg.color,
-      roughness: 0.4,
-      metalness: 0.0,
+    const mobile = window.innerWidth <= 768;
+    const activeConfigs = mobile
+      ? boxConfigs.filter((_, i) => i % 2 === 0)
+      : boxConfigs;
+
+    const sizeScale = mobile ? 0.65 : 1;
+    const posScaleX = mobile ? 0.35 : 1;
+    const posScaleY = mobile ? 0.7 : 1;
+
+    boxes = activeConfigs.map((cfg) => {
+      const geometry = new RoundedBoxGeometry(
+        cfg.size[0] * sizeScale,
+        cfg.size[1] * sizeScale,
+        cfg.size[2] * sizeScale,
+        4,
+        0.15
+      );
+      const material = new THREE.MeshStandardMaterial({
+        color: cfg.color,
+        roughness: 0.4,
+        metalness: 0.0,
+      });
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(cfg.pos[0] * posScaleX, cfg.pos[1] * posScaleY, cfg.pos[2]);
+      mesh.rotation.set(
+        Math.random() * Math.PI * 2,
+        Math.random() * Math.PI * 2,
+        Math.random() * Math.PI * 2
+      );
+      mesh.userData.speed = cfg.speed;
+      scene.add(mesh);
+      return mesh;
     });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(cfg.pos[0] * posScaleX, cfg.pos[1] * posScaleY, cfg.pos[2]);
-    mesh.rotation.set(
-      Math.random() * Math.PI * 2,
-      Math.random() * Math.PI * 2,
-      Math.random() * Math.PI * 2
-    );
-    mesh.userData.speed = cfg.speed;
-    scene.add(mesh);
-    return mesh;
-  });
+  }
+
+  buildBoxes();
 
   // Mouse tracking — subtle camera orbit
   const mouse = { x: 0, y: 0 };
@@ -189,6 +202,7 @@ if (canvas) {
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
     composer.setSize(width, height);
+    buildBoxes();
   }
   window.addEventListener("resize", onResize);
 
