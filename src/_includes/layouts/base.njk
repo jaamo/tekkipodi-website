@@ -41,7 +41,7 @@
 
     <main>
         <div class="slice slice--black slice--bottom-decoration">
-            <div class="container pt-xl pb-l">
+            <div class="container{% if narrow %} container--narrow{% endif %} pt-xl pb-l">
                 {{ content | safe }}
             </div>
         </div>

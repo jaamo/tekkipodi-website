@@ -2,7 +2,10 @@
 layout: layouts/base.njk
 title: Äänessä
 description: "Kuka Tekkipodia tekee."
+narrow: true
 ---
+
+![Jaakko Alajoki](/images/jaamo.jpg)
 
 # Äänessä: Jaakko Alajoki
 
