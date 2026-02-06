@@ -40,7 +40,7 @@
     {% include "partials/nav.njk" %}
 
     <main>
-        <div class="slice slice--black slice--bottom-decoration">
+        <div class="slice slice--{{ theme if theme else 'black' }} slice--bottom-decoration">
             <div class="container{% if narrow %} container--narrow{% endif %} pt-xl pb-l">
                 {{ content | safe }}
             </div>
