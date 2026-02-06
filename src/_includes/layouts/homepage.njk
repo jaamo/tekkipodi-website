@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,24 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ title }}",
+      "description": "{{ site.tagline }}",
+      "url": "https://www.tekkipodi.fi/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "{{ site.title }}",
+        "url": "https://www.tekkipodi.fi/"
+      },
+      "primaryImageOfPage": "https://www.tekkipodi.fi/images/cover.jpg",
+      "inLanguage": "fi"
+    }
+    </script>
 
     <!-- Google Analytics (loads only when analytics cookies accepted) -->
     <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-8CRQ3XK9BP"></script>
