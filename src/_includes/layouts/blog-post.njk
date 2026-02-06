@@ -51,6 +51,27 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
 
+    <!-- PodcastEpisode Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastEpisode",
+      "name": "{{ title }}",
+      "description": "{% if description %}{{ description }}{% endif %}",
+      "url": "https://www.tekkipodi.fi{{ page.url }}",
+      "image": "https://www.tekkipodi.fi/images/cover.jpg",
+      {% if date %}
+      "datePublished": "{{ date | dateFormat('iso') }}",
+      {% endif %}
+      "partOfSeries": {
+        "@type": "PodcastSeries",
+        "name": "Tekkipodi",
+        "url": "https://www.tekkipodi.fi"
+      },
+      "inLanguage": "fi"
+    }
+    </script>
+
     <!-- Google Analytics (loads only when analytics cookies accepted) -->
     <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-8CRQ3XK9BP"></script>
     <script type="text/plain" data-category="analytics">

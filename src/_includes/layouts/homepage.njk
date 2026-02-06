@@ -26,6 +26,48 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
 
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tekkipodi",
+      "url": "https://www.tekkipodi.fi",
+      "logo": "https://www.tekkipodi.fi/images/tekkipodi-logo.png",
+      "description": "{{ site.tagline }}",
+      "sameAs": [
+        "{{ site.podcastLinks.spotify }}",
+        "{{ site.podcastLinks.apple }}",
+        "{{ site.podcastLinks.youtube }}"
+      ],
+      "areaServed": "FI",
+      "inLanguage": "fi"
+    }
+    </script>
+
+    <!-- Podcast Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "Tekkipodi",
+      "description": "{{ site.tagline }}",
+      "url": "https://www.tekkipodi.fi",
+      "image": "https://www.tekkipodi.fi/images/cover.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Tekkipodi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tekkipodi"
+      },
+      "inLanguage": "fi",
+      "genre": ["Technology"],
+      "webFeed": "{{ site.podcastLinks.rss }}"
+    }
+    </script>
+
     <!-- Google Analytics (loads only when analytics cookies accepted) -->
     <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-8CRQ3XK9BP"></script>
     <script type="text/plain" data-category="analytics">
