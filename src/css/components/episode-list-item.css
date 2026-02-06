@@ -17,6 +17,43 @@
   box-shadow: 0 4px 12px rgba(78, 201, 176, 0.2);
 }
 
+/* Featured episode card (single episode on homepage) */
+.episode-card--featured {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.episode-card--featured:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.episode-card--featured .episode-card-thumbnail {
+  width: 30%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+}
+
+.episode-card--featured .episode-card-body {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .episode-card--featured {
+    flex-direction: column;
+  }
+
+  .episode-card--featured .episode-card-thumbnail {
+    width: 100%;
+    display: block;
+  }
+}
+
 .episode-card-thumbnail {
   flex-shrink: 0;
   width: 120px;
