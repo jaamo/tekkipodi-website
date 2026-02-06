@@ -153,17 +153,9 @@
 
         </div>
 
-        <div class="slice slice--white">
-            <div class="container pt-xl pb-l">
-                <div id="vieraskirja"></div>
-                <div id="guestbook-widget" data-disable-episode="true"></div>
-                <script src="{{ env.guestbookWidgetUrl }}"></script>
-            </div>
-        </div>
-
-        <div class="slice slice--black slice--bottom-decoration slice--top-decoration">
+        <div class="slice slice--white slice--top-decoration">
             <div class="container pt-xl pb-xl">
-                <blockquote class="quote-text" id="random-quote" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
+                <blockquote class="quote-text" id="random-quote" style="color: #000;" data-quotes='["Korkealaatuista kamaa!", "Tykkäsin sun henkilökohtaisesta otteesta.", "Kuuntelin just kaikki jaksot ja koukutuin täysin."]'>
                     <!-- Quote will be inserted by JavaScript -->
                 </blockquote>
                 <script>
@@ -182,18 +174,10 @@
                 </script>
             </div>
         </div>
-
-        <div class="slice slice--white">
-            <div class="container pt-xl pb-xl">
-                <div id="aanessa" class="content">
-                    {{ content | safe }}
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer>
-        <div class="slice slice--black slice--top-decoration">
+        <div class="slice slice--black slice--top-decoration-reversed">
             <div class="container pt-m pb-l">
                 <div class="platforms platforms--white">
                     <a href="{{ site.podcastLinks.spotify }}" target="_blank" rel="noopener noreferrer" class="platform-icon" aria-label="Listen on Spotify">
