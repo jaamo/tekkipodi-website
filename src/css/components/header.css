@@ -102,31 +102,96 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Spotify button */
-.header-spotify-button {
+/* Listen button */
+.header-listen {
   margin-left: auto;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 38px;
+}
+
+.header-listen-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #1db954;
-  text-decoration: none;
+  color: var(--color-black);
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #1db954;
+  border: 1px solid var(--color-black);
   border-radius: 4px;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
+  background: none;
+  cursor: pointer;
+  height: 38px;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.header-spotify-button:hover {
-  background-color: #1db954;
+.header-listen-button:hover {
+  background-color: var(--color-black);
   color: #ffffff;
 }
 
-.header-spotify-button svg {
+.header-listen-button svg {
   flex-shrink: 0;
 }
+
+/* Panel overlays the button area; icons start below */
+.header-listen-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  height: 38px;
+  box-sizing: border-box;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.header-listen--open .header-listen-panel {
+  pointer-events: auto;
+}
+
+.header-listen-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  opacity: 0.6;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.header-listen-icon:hover {
+  opacity: 1;
+}
+
+.header-listen-icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0);
+  transition: filter 0.2s ease;
+}
+
+/* Open state: button slides up, each icon slides up from bottom */
+.header-listen--open .header-listen-button {
+  transform: translateY(-100%);
+}
+
+.header-listen--open .header-listen-icon {
+  transform: translateY(0);
+}
+
+/* Stagger: rightmost (4th) first, then 3rd, 2nd, 1st */
+.header-listen--open .header-listen-icon:nth-child(4) { transition-delay: 0s; }
+.header-listen--open .header-listen-icon:nth-child(3) { transition-delay: 0.04s; }
+.header-listen--open .header-listen-icon:nth-child(2) { transition-delay: 0.08s; }
+.header-listen--open .header-listen-icon:nth-child(1) { transition-delay: 0.12s; }
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -165,13 +230,27 @@
     border-radius: 0;
   }
 
-  .header-spotify-button {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
+  .header-listen {
+    height: 34px;
   }
 
-  .header-spotify-button svg {
-    width: 18px;
-    height: 18px;
+  .header-listen-button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    height: 34px;
+  }
+
+  .header-listen-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-listen-panel {
+    height: 34px;
+  }
+
+  .header-listen-icon {
+    width: 28px;
+    height: 28px;
   }
 }
