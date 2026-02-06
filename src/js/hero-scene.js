@@ -169,6 +169,16 @@ if (canvas) {
     mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
+  // Scroll parallax — camera shifts up slower than page scrolls
+  let scrollY = 0;
+  window.addEventListener(
+    "scroll",
+    () => {
+      scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    },
+    { passive: true }
+  );
+
   // Handle resize
   function onResize() {
     const width = canvas.clientWidth;
@@ -189,6 +199,9 @@ if (canvas) {
     cameraTarget.y += (mouse.y * maxRotation - cameraTarget.y) * 0.05;
     camera.rotation.y = -cameraTarget.x;
     camera.rotation.x = -cameraTarget.y;
+
+    // Scroll parallax — shift camera Y to create slower background movement
+    camera.position.y = scrollY * 0.01;
 
     for (const box of boxes) {
       box.rotation.x += box.userData.speed[0];
