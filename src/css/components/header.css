@@ -105,10 +105,14 @@
 /* Listen button */
 .header-listen {
   margin-left: auto;
+  margin-top: -0.75rem;
+  margin-bottom: -0.75rem;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
-  height: 38px;
+  align-self: stretch;
+  display: flex;
+  align-items: stretch;
 }
 
 .header-listen-button {
@@ -118,12 +122,12 @@
   color: var(--color-black);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
   border: 1px solid var(--color-black);
   border-radius: 4px;
   background: none;
   cursor: pointer;
-  height: 38px;
   box-sizing: border-box;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -137,19 +141,21 @@
   flex-shrink: 0;
 }
 
-/* Panel overlays the button area; icons start below */
+/* Panel sits below the container (at top:100%), hidden by overflow */
 .header-listen-panel {
   position: absolute;
-  top: 0;
+  top: 100%;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 0.35rem;
-  height: 38px;
+  height: 100%;
+  padding: 0 0.5rem;
   box-sizing: border-box;
   cursor: pointer;
   pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-listen--open .header-listen-panel {
@@ -163,8 +169,7 @@
   width: 32px;
   height: 32px;
   opacity: 0.6;
-  transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .header-listen-icon:hover {
@@ -178,16 +183,28 @@
   transition: filter 0.2s ease;
 }
 
-/* Open state: button slides up, each icon slides up from bottom */
+/* Open state: button slides up out, panel slides up in */
 .header-listen--open .header-listen-button {
   transform: translateY(-100%);
 }
 
-.header-listen--open .header-listen-icon {
-  transform: translateY(0);
+.header-listen--open .header-listen-panel {
+  transform: translateY(-100%);
 }
 
-/* Stagger: rightmost (4th) first, then 3rd, 2nd, 1st */
+/* Stagger individual icons within the panel */
+.header-listen-icon {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.header-listen--open .header-listen-icon {
+  transform: translateY(0);
+  opacity: 0.6;
+}
+
+/* Rightmost (4th) first, then 3rd, 2nd, 1st */
 .header-listen--open .header-listen-icon:nth-child(4) { transition-delay: 0s; }
 .header-listen--open .header-listen-icon:nth-child(3) { transition-delay: 0.04s; }
 .header-listen--open .header-listen-icon:nth-child(2) { transition-delay: 0.08s; }
@@ -230,23 +247,14 @@
     border-radius: 0;
   }
 
-  .header-listen {
-    height: 34px;
-  }
-
   .header-listen-button {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
-    height: 34px;
   }
 
   .header-listen-button svg {
     width: 16px;
     height: 16px;
-  }
-
-  .header-listen-panel {
-    height: 34px;
   }
 
   .header-listen-icon {
