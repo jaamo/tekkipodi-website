@@ -33,6 +33,7 @@
 .main-nav {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-list {
@@ -250,18 +251,7 @@
     border-radius: 0;
   }
 
-  .header-listen-button {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .header-listen-button svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .header-listen-icon {
-    width: 28px;
-    height: 28px;
+  .header-listen {
+    display: none;
   }
 }
