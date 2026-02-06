@@ -52,6 +52,10 @@
     width: 100%;
     display: block;
   }
+
+  .episode-card--featured .episode-card-body {
+    width: 100%;
+  }
 }
 
 .episode-card-thumbnail {
@@ -123,12 +127,12 @@
 }
 
 @media (max-width: 768px) {
-  .episode-card {
+  .episode-card:not(.episode-card--featured) {
     flex-direction: row;
     gap: 1rem;
   }
 
-  .episode-card-thumbnail {
+  .episode-card:not(.episode-card--featured) .episode-card-thumbnail {
     display: none;
   }
 }
