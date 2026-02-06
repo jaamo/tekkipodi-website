@@ -109,7 +109,8 @@
   margin-bottom: -0.75rem;
   position: relative;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: clip;
   align-self: stretch;
   display: flex;
   align-items: stretch;
@@ -149,9 +150,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.35rem;
+  gap: 0.5rem;
   height: 100%;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
+  white-space: nowrap;
+  left: auto;
   box-sizing: border-box;
   cursor: pointer;
   pointer-events: none;
@@ -185,7 +188,7 @@
 
 /* Open state: button slides up out, panel slides up in */
 .header-listen--open .header-listen-button {
-  transform: translateY(-100%);
+  transform: translateY(calc(-100% - 1rem));
 }
 
 .header-listen--open .header-listen-panel {
