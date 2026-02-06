@@ -159,6 +159,16 @@ if (canvas) {
     return mesh;
   });
 
+  // Mouse tracking — subtle camera orbit
+  const mouse = { x: 0, y: 0 };
+  const cameraTarget = { x: 0, y: 0 };
+  const maxRotation = 0.025; // radians — subtle
+
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
   // Handle resize
   function onResize() {
     const width = canvas.clientWidth;
@@ -173,6 +183,13 @@ if (canvas) {
   // Animation loop
   function animate() {
     requestAnimationFrame(animate);
+
+    // Smooth camera follow with lerp
+    cameraTarget.x += (mouse.x * maxRotation - cameraTarget.x) * 0.05;
+    cameraTarget.y += (mouse.y * maxRotation - cameraTarget.y) * 0.05;
+    camera.rotation.y = -cameraTarget.x;
+    camera.rotation.x = -cameraTarget.y;
+
     for (const box of boxes) {
       box.rotation.x += box.userData.speed[0];
       box.rotation.y += box.userData.speed[1];
