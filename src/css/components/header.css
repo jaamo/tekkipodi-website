@@ -33,7 +33,6 @@
 .main-nav {
   display: flex;
   align-items: center;
-  margin-left: auto;
 }
 
 .nav-list {
@@ -81,6 +80,10 @@
   width: 30%;
   left: 35%;
   background: #d1d1d1;
+}
+
+.nav-platforms {
+  display: none;
 }
 
 /* Hamburger toggle */
@@ -225,6 +228,10 @@
     height: 24px;
   }
 
+  .main-nav {
+    margin-left: auto;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -253,5 +260,19 @@
 
   .header-listen {
     display: none;
+  }
+
+  .nav-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.75rem 20px;
+    border-top: 1px solid #eee;
+    margin-top: 0.25rem;
+  }
+
+  .nav-platforms .platform-icon {
+    width: 32px;
+    height: 32px;
   }
 }
