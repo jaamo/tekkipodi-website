@@ -127,11 +127,18 @@ if (canvas) {
     },
   ];
 
-  const boxes = boxConfigs.map((cfg) => {
+  const isMobile = window.innerWidth <= 768;
+  const activeConfigs = isMobile
+    ? boxConfigs.filter((_, i) => i % 2 === 0)
+    : boxConfigs;
+
+  const sizeScale = isMobile ? 0.5 : 1;
+
+  const boxes = activeConfigs.map((cfg) => {
     const geometry = new RoundedBoxGeometry(
-      cfg.size[0],
-      cfg.size[1],
-      cfg.size[2],
+      cfg.size[0] * sizeScale,
+      cfg.size[1] * sizeScale,
+      cfg.size[2] * sizeScale,
       4,
       0.15
     );
