@@ -26,6 +26,28 @@
     <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.tagline }}{% endif %}">
     <meta name="twitter:image" content="/images/cover.jpg">
 
+    <!-- Podcast Episode Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastEpisode",
+      "name": "{{ title }}",
+      {% if description %}"description": "{{ description }}",{% endif %}
+      {% if date %}"datePublished": "{{ date | dateFormat('iso') }}",{% endif %}
+      {% if length %}"timeRequired": "{{ length | lengthToISO8601 }}",{% endif %}
+      "url": "{{ page.url }}",
+      {% if spotify %}"associatedMedia": {
+        "@type": "MediaObject",
+        "contentUrl": "{{ spotify }}"
+      },{% endif %}
+      "partOfSeries": {
+        "@type": "PodcastSeries",
+        "name": "{{ site.title }}",
+        "url": "{{ site.podcastLinks.spotify }}"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
 
