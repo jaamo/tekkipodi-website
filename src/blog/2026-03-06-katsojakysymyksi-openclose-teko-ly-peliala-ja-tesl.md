@@ -3,6 +3,8 @@ layout: "layouts/blog-post.njk"
 title: "008 - Katsojakysymyksen, OpenClaw, Tesla ja tekoäly peliteollisuudessa"
 description: "Tässä jaksossa käsitellään katsojakysymyksiä! Puhumme lisäksi OpenClaw:sta, tekoälystä peliteollisuudessa ja Teslasta."
 date: "2026-03-06"
+spotify: "https://open.spotify.com/episode/0f0xZkZTrLUEbRsHmzMvJi?si=dc2de481fc0041f9"
+length: "36 min"
 ---
 
 ### Katsojakysymykset
