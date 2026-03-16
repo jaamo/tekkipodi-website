@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/vendor/cookieconsent.css">
 
+    {% if env.production %}
+    <script defer data-id="37b9d914-0e80-4d74-8c5a-e0966efb194c" src="https://analytics.mrjaamo.com/js/tracker.js"></script>
+    {% endif %}
+
     <!-- Organization Schema -->
     <script type="application/ld+json">
     {
