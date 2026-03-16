@@ -10,6 +10,10 @@ A static website generated with [Eleventy](https://www.11ty.dev/) and markdown f
 - ✅ Modern, clean styling
 - ✅ Easy to customize and extend
 
+## Hosting
+
+This site is hosted on [Vercel](https://vercel.com/).
+
 ## Getting Started
 
 ### Prerequisites
