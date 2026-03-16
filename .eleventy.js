@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
     guestbookWidgetUrl:
       process.env.GUESTBOOK_WIDGET_URL ||
       "https://guestbook.tekkipodi.fi/widget.js",
+    production: process.env.NODE_ENV === "production",
   });
 
   // Add date filter
