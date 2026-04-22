@@ -1,7 +1,7 @@
 module.exports = {
   url: "https://www.tekkipodi.fi",
   title: "Tekkipodi",
-  tagline: "Podcast, jossa analysoidaan kiinnostavia uutisia teknologian, internetin, tekoälyn ja startupien tiimoilta.",
+  tagline: "Podcast, jossa analysoidaan kiinnostavia tapahtumia teknologian, internetin, tekoälyn ja startupien tiimoilta.",
   logo: "/images/tekkipodi-logo.svg",
   heroBackground: "/images/hero.jpg",
   currentYear: new Date().getFullYear(),
@@ -12,4 +12,3 @@ module.exports = {
     rss: "https://anchor.fm/s/10bec9170/podcast/rss"
   }
 };
-

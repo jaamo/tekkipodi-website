@@ -1,7 +1,7 @@
 ---
 layout: layouts/homepage.njk
 title: Tekkipodi - Podcast teknologiasta
-description: "Tekkipodi - Podcast, jossa analysoidaan kiinnostavia uutisia teknologian, tekoälyn ja startupien maailmasta."
+description: "Tekkipodi - Podcast, jossa analysoidaan kiinnostavia tapahtumia teknologian, tekoälyn ja startupien maailmasta."
 ---
 
 ## Äänessä
