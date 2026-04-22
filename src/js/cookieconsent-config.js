@@ -23,11 +23,6 @@ CookieConsent.run({
       enabled: true,
       readOnly: true,
     },
-    analytics: {
-      autoClear: {
-        cookies: [{ name: /^_ga/ }, { name: "_gid" }],
-      },
-    },
   },
 
   language: {
@@ -35,9 +30,9 @@ CookieConsent.run({
     translations: {
       fi: {
         consentModal: {
-          title: "Analytiikka vaatii evästeitä",
+          title: "Evästeet",
           description:
-            "Sivustolla on käytössä Google Analytics ja sen toiminta vaatii evästeiden hyväksynnän. Voit kieltäytyä evästeestä.",
+            "Sivustolla käytetään vain sivuston toiminnalle välttämättömiä evästeitä.",
           acceptAllBtn: "Hyväksy kaikki",
           acceptNecessaryBtn: "Vain välttämättömät",
           showPreferencesBtn: "Muokkaa asetuksia",
@@ -62,12 +57,6 @@ CookieConsent.run({
               description:
                 "Nämä evästeet ovat välttämättömiä sivuston toiminnalle. Ilman niitä sivusto ei toimi oikein.",
               linkedCategory: "necessary",
-            },
-            {
-              title: "Analytiikkaevästeet",
-              description:
-                "Nämä evästeet auttavat meitä ymmärtämään, miten kävijät käyttävät sivustoamme. Tiedot ovat anonyymejä.",
-              linkedCategory: "analytics",
             },
           ],
         },
