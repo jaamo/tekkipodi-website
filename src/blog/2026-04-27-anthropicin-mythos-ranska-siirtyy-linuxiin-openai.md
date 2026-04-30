@@ -41,7 +41,7 @@ Lyhytvideot ovat aidosti koukuttavia. On aika ankea tunne herätä siihen, että
 
 Tutkimustulokset viittaavat siihen, että tekoäly voi tyhmentää käyttäjiään. Ja melko nopeasti. Kun tekoälyyn tottuu, laiskistutaan eikä enää haluta ajatella itse. Jotkut tutkimukset viittaavat siihen, että vaikutus jatkuu vielä pitkään tekoälykäytön jälkeenkin.
 
-Omassa koodauskäytössä tämä näkyy konkreettisesti. Ennen debuggaus tarkoitti tuntien intensiivistä keskittymistä: funktio funktiolta, tietomallin kerros kerrokselta, punainen lanka mielessä. Se oli kognitiivisesti vaativaa mutta kehitti todellista ymmärrystä. Nyt virheilmoitus promptataan tekoälylle ja odotetaan vastausta. Homma toimii, mutta omia aivoja ei käytetä.
+Omassa koodauskäytössä tämä näkyy konkreettisesti. Olen koodaillut tässä kevään mittaan käytettyjen polkupyörien kauppapaikkaa [Pyörätoria (pyoratori.com)](https://pyoratori.com) puhtaasti agenttisesti ja muutos on selkeä. Ennen debuggaus tarkoitti tuntien intensiivistä keskittymistä: funktio funktiolta, tietomallin kerros kerrokselta, punainen lanka mielessä. Se oli kognitiivisesti vaativaa mutta kehitti todellista ymmärrystä. Nyt virheilmoitus promptataan tekoälylle ja odotetaan vastausta. Homma toimii, mutta omia aivoja ei käytetä.
 
 Herättävin hetki oli, kun puoliso teki Python-kurssia ja kysyi neuvoa. Oma ensimmäinen ajatus oli se, miksi ihmeessä pitäisi miettiä itse, kun sen voisi vaan promptata! Aloin miettiä, että olen pilalla.
 
